@@ -8,7 +8,7 @@ export default function HomePage() {
   const [articles, setArticles] = useState<Article[]>();
 
   useEffect(() => {
-    fetch('http://localhost:3001/articles')
+    fetch('http://localhost:3000/articles')
       .then((res) => {
         if (!res.ok) toast('Une erreur serveur est survenu')
           return res.json();

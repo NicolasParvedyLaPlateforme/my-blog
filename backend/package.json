@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "back sur express.js avec TypeScript",
-  "main": "dist/index.js", 
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
@@ -13,10 +13,12 @@
   "author": "Nicolas Parvedy",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.0",
     "nodemon": "^3.1.7",

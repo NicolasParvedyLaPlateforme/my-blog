@@ -21,7 +21,7 @@ export default function ArticlesDetailPage() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:3001/articles/' + id)
+    fetch('http://localhost:3000/articles/' + id)
       .then((res) => res.json())
       .then(res => setArticle(res))
   }, [id])

@@ -28,7 +28,7 @@ export default function ArticlesAddPage() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
 
-    fetch('http://localhost:3001/articles', {
+    fetch('http://localhost:3000/articles', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,10 +38,12 @@ export default function ArticlesAddPage() {
     })
       .then((res) => {
         if (!res.ok) toast("Une erreur est survenu");
+        console.log(res);
         return res.json()
       })
       .then((res) => {
-        navigate('/articles/' + res.id)
+        console.log(res);
+        // navigate('/articles/' + res.id)
       })
   }
   return (
