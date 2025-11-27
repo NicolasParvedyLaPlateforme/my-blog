@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import type { Article } from "../components/Article/Article"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 
 export default function ArticlesDetailPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [article, setArticle] = useState<Article>();
 
@@ -18,12 +20,18 @@ export default function ArticlesDetailPage() {
     return <p>Article introuvable</p>
   }
 
-  function handleEdit(){
-
-  }
-
   function handleDelete(){
-
+    fetch('http://localhost:3001/articles/' + id, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (!res.ok) toast('Une erreur de serveur est survenu')
+        return res.json();
+      })
+      .then(() => {
+        toast("L'article a bien été supprimé");
+        navigate('/articles/');
+      })
   }
 
   return (

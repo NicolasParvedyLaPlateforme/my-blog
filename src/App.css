@@ -447,6 +447,14 @@ img {
 .btn-edit {
   background-color: #f3f4f6;
   color: #374151;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
 }
 
 .btn-edit:hover {
@@ -456,6 +464,14 @@ img {
 .btn-delete {
   background-color: #fee2e2;
   color: #dc2626;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
 }
 
 .btn-delete:hover {

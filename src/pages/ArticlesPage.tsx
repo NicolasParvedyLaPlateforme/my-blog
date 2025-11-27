@@ -9,7 +9,7 @@ export default function ArticlesPage() {
     fetch('http://localhost:3001/articles')
       .then((res) => res.json())
       .then((res) => setArticles(res))
-  })
+  }, [])
 
   if (articles == undefined) return <p>Aucun article a été trouvé.</p>
 

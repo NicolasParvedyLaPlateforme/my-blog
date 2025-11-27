@@ -14,7 +14,7 @@ export default function ArticlesUpdatePage() {
     excerpt: '',
     date: new Date().toISOString().split('T')[0], // Date du jour par défaut
     category: '',
-    imageUrl: '',
+    imageUrl: 'https://picsum.photos/200/300',
     content: ''
   })
 
@@ -117,7 +117,7 @@ export default function ArticlesUpdatePage() {
             name="imageUrl"
             className="form-input"
             placeholder="https://..."
-            value={article.imageUrl != "" ? article.imageUrl : "https://picsum.photos/200/300"}
+            value={article.imageUrl}
             onChange={handleChange}
           />
         </div>

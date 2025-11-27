@@ -13,7 +13,7 @@ export default function ArticlesAddPage() {
     excerpt: '',
     date: new Date().toISOString().split('T')[0], // Date du jour par défaut
     category: '',
-    imageUrl: '',
+    imageUrl: 'https://picsum.photos/800/400',
     content: ''
   })
 
@@ -24,8 +24,6 @@ export default function ArticlesAddPage() {
     //On fait un callback qui recupère les anciens données de l'article sauf celui qui est indiqué dans name, et name corresponds à la propriété name de notre input, exemple title, ou content 
     setArticle(prev => ({...prev, [name]: value}))
   }
-
-  console.log(article);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
@@ -108,7 +106,7 @@ export default function ArticlesAddPage() {
             name="imageUrl"
             className="form-input"
             placeholder="https://..."
-            value={article.imageUrl != "" ? article.imageUrl : "https://picsum.photos/200/300"}
+            value={article.imageUrl}
             onChange={handleChange}
           />
         </div>

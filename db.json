@@ -2,7 +2,7 @@
   "articles": [
     {
       "id": "9322",
-      "title": "Mon article",
+      "title": "Introduction à React 19",
       "excerpt": "Un extrait de mon article",
       "date": "2025-11-27",
       "category": "Développement",
@@ -15,7 +15,7 @@
       "excerpt": "aze",
       "date": "2025-11-27",
       "category": "Développement",
-      "imageUrl": "",
+      "imageUrl": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=1000&auto=format&fit=crop",
       "content": "aze"
     },
     {
@@ -24,34 +24,16 @@
       "excerpt": "aze",
       "date": "2025-11-27",
       "category": "Développement",
-      "imageUrl": "",
+      "imageUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
       "content": "aze"
     },
     {
-      "id": "b67e",
-      "title": "aze",
-      "excerpt": "aze",
-      "date": "2025-11-27",
-      "category": "Design",
-      "imageUrl": "",
-      "content": "aze"
-    },
-    {
-      "id": "cacb",
-      "title": "aze",
-      "excerpt": "aze",
-      "date": "2025-11-27",
-      "category": "Design",
-      "imageUrl": "",
-      "content": "aze"
-    },
-    {
-      "id": "6719",
+      "id": "1409",
       "title": "test",
       "excerpt": "test",
       "date": "2025-11-27",
       "category": "Design",
-      "imageUrl": "",
+      "imageUrl": "https://picsum.photos/800/400",
       "content": "test"
     }
   ]
