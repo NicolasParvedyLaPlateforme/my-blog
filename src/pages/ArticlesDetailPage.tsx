@@ -7,8 +7,18 @@ import { toast } from "sonner";
 export default function ArticlesDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [like, setLike] = useState("💔")
 
   const [article, setArticle] = useState<Article>();
+
+  function handleLike(){
+    if (like == "💔")
+    {
+      setLike("❤️")
+    }else {
+      setLike("💔")
+    }
+  }
 
   useEffect(() => {
     fetch('http://localhost:3001/articles/' + id)
@@ -58,6 +68,7 @@ export default function ArticlesDetailPage() {
         {article.content.split('\n').map((paragraph, index) => (
           paragraph.trim() && <p key={index}>{paragraph}</p>
         ))}
+        <p>Vous aimez l'article ? <button onClick={handleLike}>{ like }</button></p>
       </div>
 
       {/* Actions Admin */}

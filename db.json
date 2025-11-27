@@ -11,12 +11,12 @@
     },
     {
       "id": "f919",
-      "title": "aze",
-      "excerpt": "aze",
+      "title": "Je suis un titre tout à fait banal",
+      "excerpt": "Un résumé qu'on verra dans la HomePage",
       "date": "2025-11-27",
       "category": "Développement",
       "imageUrl": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=1000&auto=format&fit=crop",
-      "content": "aze"
+      "content": "Le contenu de page qu'on verra quand on lit l'article"
     },
     {
       "id": "7ce3",
