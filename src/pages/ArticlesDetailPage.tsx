@@ -21,7 +21,7 @@ export default function ArticlesDetailPage() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:3000/articles/' + id)
+    fetch('http://localhost:3001/articles/' + id)
       .then((res) => res.json())
       .then(res => setArticle(res))
   }, [id])
@@ -45,41 +45,45 @@ export default function ArticlesDetailPage() {
   }
 
   return (
-    <div className="article-container">
-      {/* En-tête */}
-      <header className="article-header">
-        <span className="article-category-badge">{article.category}</span>
-        <h1 className="article-title">{article.title}</h1>
-        <div className="article-meta">
-          Publié le {article.date} par <strong>Nicolas Parvedy</strong>
+    <main>
+
+      
+      <div className="article-container">
+        {/* En-tête */}
+        <header className="article-header">
+          <span className="article-category-badge">{article.category}</span>
+          <h1 className="article-title">{article.title}</h1>
+          <div className="article-meta">
+            Publié le {article.date} par <strong>Nicolas Parvedy</strong>
+          </div>
+        </header>
+
+        {/* Image principale */}
+        <img 
+          src={article.imageUrl} 
+          alt={article.title} 
+          className="article-cover-image"
+        />
+
+        {/* Contenu de l'article */}
+        <div className="article-content">
+          {/* On split le texte par saut de ligne pour simuler des paragraphes */}
+          {article.content.split('\n').map((paragraph, index) => (
+            paragraph.trim() && <p key={index}>{paragraph}</p>
+          ))}
+          <p>Vous aimez l'article ? <button onClick={handleLike}>{ like }</button></p>
         </div>
-      </header>
 
-      {/* Image principale */}
-      <img 
-        src={article.imageUrl} 
-        alt={article.title} 
-        className="article-cover-image"
-      />
-
-      {/* Contenu de l'article */}
-      <div className="article-content">
-        {/* On split le texte par saut de ligne pour simuler des paragraphes */}
-        {article.content.split('\n').map((paragraph, index) => (
-          paragraph.trim() && <p key={index}>{paragraph}</p>
-        ))}
-        <p>Vous aimez l'article ? <button onClick={handleLike}>{ like }</button></p>
+        {/* Actions Admin */}
+        <div className="article-actions">
+          <Link to={"/articles/update/" + article.id} className="btn-edit">
+            ✏️ Modifier l'article
+          </Link>
+          <button onClick={handleDelete} className="btn-delete">
+            🗑️ Supprimer l'article
+          </button>
+        </div>
       </div>
-
-      {/* Actions Admin */}
-      <div className="article-actions">
-        <Link to={"/articles/update/" + article.id} className="btn-edit">
-          ✏️ Modifier l'article
-        </Link>
-        <button onClick={handleDelete} className="btn-delete">
-          🗑️ Supprimer l'article
-        </button>
-      </div>
-    </div>
+    </main>
   )
 }

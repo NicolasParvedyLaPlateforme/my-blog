@@ -8,7 +8,7 @@ export default function HomePage() {
   const [articles, setArticles] = useState<Article[]>();
 
   useEffect(() => {
-    fetch('http://localhost:3000/articles')
+    fetch('http://localhost:3001/articles')
       .then((res) => {
         if (!res.ok) toast('Une erreur serveur est survenu')
           return res.json();
@@ -27,9 +27,7 @@ export default function HomePage() {
           Explorons ensemble les dernières tendances du développement web, 
           du design UI/UX et de la technologie moderne.
         </p>
-        <button onClick={() => console.log('S abonner')}>
-          S'abonner à la newsletter
-        </button>
+        <Link to="/articles" className="button">Voir mes articles</Link>
       </section>
 
       {/* Section Articles Récents */}

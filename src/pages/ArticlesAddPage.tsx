@@ -28,7 +28,7 @@ export default function ArticlesAddPage() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
 
-    fetch('http://localhost:3000/articles', {
+    fetch('http://localhost:3001/articles', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,11 +42,12 @@ export default function ArticlesAddPage() {
         return res.json()
       })
       .then((res) => {
-        console.log(res);
-        // navigate('/articles/' + res.id)
+        toast("Article : " + article.title + " Bien ajouté")
+        navigate('/articles/' + res.id)
       })
   }
   return (
+    
     <div className="form-container card">
       <h1>Ajouter un nouvel article</h1>
 
